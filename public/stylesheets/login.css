@@ -1,0 +1,141 @@
+body{
+	background-color: #ffbd58;
+}
+.login-body{
+	height: 350px;
+	background-color: white;
+	width: 350px;
+	margin-top: 200px;
+	margin-left: 300px;
+	border-radius: 15px;
+	padding-top: 50px;
+	padding-left: 50px;
+	padding-right: 50px;
+	text-align: center;
+	position: relative;
+}
+.login-body1{
+	height: 550px;
+	background-color: white;
+	width: 650px;
+	margin-top: 100px;
+	margin-left: 550px;
+	border-radius: 15px;
+	padding-top: 30px;
+	padding-left: 30px;
+	padding-right: 30px;
+	text-align: center;
+	position: relative;
+}
+.holding{
+	margin: 50px;
+}
+.holding1{
+	margin: 20px;
+}
+.input-f{
+	height: 40px;
+	width: 100%;
+	border-radius: 20px;
+	border-width: 0mm;
+	background-color: whitesmoke;
+	text-align: center;
+}
+.tit{
+	font-family: 'Merriweather', serif;
+}
+#chefimg{
+	width: 30%;
+	position: absolute;
+	right: 100px;
+	top: 200px;
+}
+#chefimg1{
+	width: 35%;
+	position: absolute;
+	right: 100px;
+	top: 200px;
+}
+#chefimg2{
+	width: 35%;
+	position: absolute;
+	left: 50px;
+	top: 150px;
+}
+header img{
+    height: 80px;
+    width: 80px;
+    margin: 0px;
+  }
+  header *{
+    display: inline;
+  }
+  .form-label{
+	font-family: 'Merriweather', serif;
+  }
+  .see{
+	width: 100px;
+	height: 45px;
+	background-color: #ffbd58;
+	border-radius: 20px;
+	border-width: 0mm;
+	padding: 5px;
+	font-weight: bold;
+	text-decoration: none;
+	margin-left: auto;
+	margin-top: 15px;
+	margin-right: auto;
+	display: block;
+	text-align: center;
+	margin-bottom: 0px;
+	font-family: 'Merriweather', serif;
+	}
+	.see2{
+		width: 200px;
+		height: 25px;
+		background-color: white;
+		border-radius: 20px;
+		padding: 5px;
+		font-weight: bold;
+		text-decoration: none;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 150px;
+		display: block;
+		text-align: center;
+		margin-bottom: 0px;
+		color: #ff5757;
+		font-size: 20px;
+	}
+  .hee{
+    color:white;
+    text-decoration: none;
+    margin: 20px;
+  }
+  .see:hover{
+	  transform: scale(1.1);
+  }
+  .see2:hover{
+	transform: scale(1.1);
+}
+  .hee :hover{
+    text-decoration: underline;
+    font-stretch: expanded;
+  }
+  header {
+    background-color:#ffbd58;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    box-shadow: 0 0 6px rgb(0 0 0 / 15%);
+	color: white;
+}
+.check{
+    margin-left: 450px;
+  }

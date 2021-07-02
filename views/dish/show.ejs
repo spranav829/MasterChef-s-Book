@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book</title>
+    <link rel="stylesheet" href="/stylesheets/normal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <%- include('../partials/navbar')%>
+        <link rel="stylesheet" href="/stylesheets/stars.css">
+        <div class="card" style="width: 32rem;">
+            <br>
+            <div class="showtit" style="width: 990px;margin-left: 170px;padding: 20px;">
+                <img src="<%= dish.image%>" alt="" width="500" height="300">
+                <h1>
+                    <%= dish.title%>
+                </h1>
+                <p class="card-text">
+                    <%= dish.description%>
+                </p>
+                <p class="card-text">
+                <pre><%= dish.steps%></pre>
+                </p>
+                <p class="card-text">
+                    Chef: <%= dish.author.username%>
+                </p>
+                <% if(currentUser && dish.author.equals(currentUser._id)) {%>
+                    <div class="card-body">
+                        <form action="/dishes/<%=dish._id%>?_method=DELETE" method="POST">
+                            <a class="see1" href="/dishes">Back</a>
+                            <a class="see1" href="/dishes/<%=dish._id%>/edit">Edit it</a>
+                            <button class="see2" type="submit" style="font-size: 15px;">Delete</button><br><br>
+                            <a class="see1" href="/dishes/<%=dish._id%>/report">Contact
+                                Chef</a>
+                        </form>
+                    </div>
+                    <%}%>
+            </div>
+
+        </div>
+        </div>
+        <br><br>
+        <div class="review">
+            <h1>Leave a Review</h1>
+            <form action="/dishes/<%=dish._id%>/reviews" method='POST' novalidate class="validated-form">
+                <fieldset class="starability-basic">
+                    <input type="radio" id="no-rate" class="input-no-rate" name="rating" value="0" checked
+                        aria-label="No rating." />
+                    <input type="radio" id="second-rate1" name="review[rating]" value="1" />
+                    <label for="second-rate1" title="Terrible">1 star</label>
+                    <input type="radio" id="second-rate2" name="review[rating]" value="2" />
+                    <label for="second-rate2" title="Not good">2 stars</label>
+                    <input type="radio" id="second-rate3" name="review[rating]" value="3" />
+                    <label for="second-rate3" title="Average">3 stars</label>
+                    <input type="radio" id="second-rate4" name="review[rating]" value="4" />
+                    <label for="second-rate4" title="Very good">4 stars</label>
+                    <input type="radio" id="second-rate5" name="review[rating]" value="5" />
+                    <label for="second-rate5" title="Amazing">5 stars</label>
+                </fieldset>
+                <div class="card>
+                        <label class=" form-label" for="body">Review</label><br>
+                    <textarea name="review[body]" id="body" cols="77" rows="7" required></textarea><br>
+                    <button class="see2" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+        <br><br>
+        <% for(review of dish.reviews){ %>
+            <div class="review">
+                <h3>
+                    By-<%= review.author.username%>
+                </h3>
+                <h3 class="starability-result" data-rating="<%= review.rating%>">
+                    Rated: <%= review.rating%> stars
+                </h3>
+                <h3>
+                    <%= review.body%>
+                </h3>
+                <% if(currentUser && review.author.equals(currentUser._id)) {%>
+                    <form action="/dishes/<%=dish._id%>/reviews/<%=review._id%>?_method=DELETE" method="post">
+                        <button type="submit" class="see2">Delete</button>
+                        <%}%>
+                    </form>
+            </div>
+            <br>
+            </div>
+            <%}%>
+                </div>
+</body>
+
+</html>

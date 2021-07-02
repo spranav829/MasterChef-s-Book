@@ -1,0 +1,45 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Contact me</title>
+    <link rel="stylesheet" href="/stylesheets/home.css">
+</head>
+
+<body>
+    <%- include('../partials/navbar')%>
+        <div class="newk">
+            <h1>Contact Him </h1>
+            <br>
+            <div
+                style="background-color: white;color: #b83b5e;padding: 15px;width: 350px;border-radius: 15px;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;font-size: 20px;">
+                <form class="ff" action="mailto:<%=dish.author.email%>" method="post" enctype="text/plain">
+                    <label>Your Name:</label>
+                    <input type="text" name="YourName" value="">
+                    <br>
+                    <br>
+                    <label>Enter your Email ID:</label>
+                    <input type="email" name="YourEmail" value="">
+                    <br>
+                    <br>
+                    <label>Your Contact Details:</label>
+                    <input type="number" name=" YourNumber" value="">
+                    <br><br>
+                    <label>Your message:</label>
+                    <br><br>
+                    <textarea name="Yourmessage" row="10" cols="40">
+            </textarea>
+                    <br>
+                    <input style="color: #b83b5e;background-color: white;" class="see2" type="submit" name="">
+                    <br>
+                </form>
+            </div>
+            <br>
+            <a href="/" class="see1">Home</a>
+            <p>Phone No: 8779978852</p>
+            <p>Address:Hiranandani Estate</p>
+        </div>
+
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book</title>
+    <link rel="stylesheet" href="/stylesheets/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Itim&family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <%- include('../partials/navbar')%>
+        <div class="whole">
+            <div class="login-body">
+                <h1 class="tit">Register</h1>
+                <form action="/register" class="validated-form" method="post">
+                    <div class="holding1">
+                        <input class="input-f" type="email" name="email" id="email" placeholder="Email" required>
+                    </div>
+                    <div class="holding1">
+                        <input class="input-f" type="text" name="username" id="username" placeholder="Username"
+                            required>
+                    </div>
+                    <div class="holding1">
+                        <input class="input-f" type="password" name="password" id="password"
+                            pattern="^[a-z0-9A-Z]{8,16}$" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="see" onclick="butt()">Register</button>
+                </form>
+            </div>
+            <img src="/stylesheets/chef1.png" id="chefimg1" alt="">
+        </div>
+        <script>
+
+            function butt() {
+                var x = document.getElementsByClassName("input-f");
+                x.forEach((element) => {
+                    if (element.value == null) {
+                        alert('Fill all the entries')
+                    }
+                    else {
+                        confirm('Are you sure you want to proceed?')
+                    }
+                });
+            }
+        </script>
+</body>
+
+</html>

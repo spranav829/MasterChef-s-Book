@@ -1,0 +1,23 @@
+<header>
+    <img style="margin-left: 20px; border-radius: 50%;"
+        src="https://previews.123rf.com/images/freehand09/freehand091904/freehand09190400036/120934054-chef-hat-logo.jpg"
+        alt="">
+    <nav>
+        <a class="hee" style="font-size: 30px;" href="/">MasterChef's Book</a>
+        <a href="/dishes" class="hee">Recipes</a>
+        <a href="/dishes/new" class="hee">Add Recipes</a>
+        <div class="check">
+            <%if(!currentUser){%>
+                <a href="/register" class="hee"> Register</a>
+                <a href="/login" class="hee">Login</a>
+                <%}else{%>
+                    <div class="hee">
+                        <%=currentUser.username%> &nbsp;
+                    </div>
+                    <a href="/logout" class="hee">
+                        Logout
+                    </a>
+                    <%}%>
+        </div>
+    </nav>
+</header>

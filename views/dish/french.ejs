@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book</title>
+    <link rel="stylesheet" href="/stylesheets/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Itim&family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.pkgd.js">
+    </script>
+</head>
+
+<body>
+    <%- include('../partials/navbar')%>
+        <h3 class="cate" style="color: white; font-size: 30px; font-family: 'Montserrat';">Categories</h3>
+        <!-- Flickity HTML init -->
+        <div class="gallery js-flickity" data-flickity-options='{ "wrapAround": true }'>
+            <div class="gallery-cell"><a href="/dishes/asian"><img
+                        src="https://i.ndtvimg.com/i/2017-06/asian-restaurant_620x350_41496449396.jpg" alt=""
+                        height="400" width="100%" class="catimg">
+                    Asian
+
+                </a>
+            </div>
+            <div class="gallery-cell"><a href="/dishes/italian">
+                    <img src="https://images.unsplash.com/photo-1533777324565-a040eb52facd?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aXRhbGlhbiUyMGZvb2R8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80"
+                        alt="" height="400" width="100%" class="catimg">
+                    Italian</a></div>
+            <div class="gallery-cell"><a href="/dishes/american">
+                    <img src="https://i.pinimg.com/originals/ee/08/f2/ee08f2a462156f94e6a7034baa73d6ab.jpg" width="100%"
+                        alt="" height="400" class="catimg">American</a>
+            </div>
+            <div class="gallery-cell"><a href="/dishes/chinese">
+                    <img src="https://curlytales.com/wp-content/uploads/2019/07/Yauatcha-e1564481933906.jpg" alt=""
+                        height="400" width="100%" class="catimg">Chinese</a>
+            </div>
+            <div class="gallery-cell"><a href="/dishes/french">
+                    <img src="https://www.expatica.com/app/uploads/sites/5/2016/04/French-food-for-kids-1920x1080.jpg"
+                        alt="" width="100%" height="400" class="catimg">French</a>
+            </div>
+        </div>
+        <br>
+        <div>
+
+        </div>
+        <div class="formation">
+            <% for(let dish of dishs) {%>
+                <% if(dish.category==="French" ) {%>
+                    <div class="tile">
+                        <span class="dot">
+                            <img src="<%=dish.image%>" alt="" width="275" class="aimg" height="200">
+                        </span>
+                        <div>
+                            <h2>
+                                <%=dish.title%>
+                            </h2>
+                            <hr>
+                            <p class="para">
+                                <%=dish.description%>
+                            </p>
+                            <a href="/dishes/<%=dish._id%>" class="see">See Recipe</a>
+                        </div>
+                    </div>
+                    <% } %>
+                        <%}%>
+
+        </div>
+</body>
+
+</html>

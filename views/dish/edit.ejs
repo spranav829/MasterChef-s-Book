@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book</title>
+    <link rel="stylesheet" href="/stylesheets/adit.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <%- include('../partials/navbar')%>
+        <div class="whole">
+            <div class="login-body1">
+                <h1 class="tit">Edit Dish</h1>
+                <form action="/dishes/<%=dish._id%>?_method=PUT" method="POST" class="validated-form">
+                    <div class="holding1">
+                        <label class="form-label" for="title">Title</label>
+                        <input class="input-f" type="text" name="dish[title]" id="title" value="<%=dish.title%>"
+                            required>
+                    </div>
+                    <div class="holding1">
+                        <label class="form-label" for="description">Description</label>
+                        <input class="input-f" type="text" name="dish[description]" id="description"
+                            value="<%=dish.description%>">
+                    </div>
+                    <div class="holding1">
+                        <label class="form-label" for="image">Image url</label>
+                        <input class="input-f" type="text" name="dish[image]" id="image" value="<%=dish.image%>">
+                    </div>
+                    <div class="holding1">
+                        <label class="form-label" for="steps">Steps</label><br>
+                        <textarea class="form-control" type="text" name="dish[steps]" id="steps" rows="10" cols="50"
+                            value="<%=dish.steps%>" required><%=dish.steps%></textarea>
+                    </div>
+                    <br>
+                    <div style="display: flex;">
+                        <button class="see2">Update</button><button class="see2" href="/dishes">Back</a>
+                    </div>
+                    <br>
+                </form>
+            </div>
+            <img src="/stylesheets/pencil.png" id="chefimg2" alt="" style="position: fixed;">
+        </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book</title>
+    <link rel="stylesheet" href="/stylesheets/addnew.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Itim&family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <%- include('../partials/navbar')%>
+        <div class="formation">
+            <div class="login-body">
+                <h1 class="tit">Write the Recipe</h1>
+
+                <form action="/dishes" method="POST" class="validated-form">
+                    <div class="holding">
+                        <label class="form-label" for="title">Title</label>
+                        <input class="input-f" type="text" name="dish[title]" id="title" required>
+                    </div>
+                    <div class="holding">
+                        <label class="form-label" for="description">Description</label>
+                        <input class="input-f" type="text" name="dish[description]" id="description">
+                    </div>
+                    <div class="holding">
+                        <label class="form-label" for="category">Category</label>
+                        <select name="dish[category]" id="category" class="input-f">
+                            <option value="Italian">Italian</option>
+                            <option value="Asian">Asian</option>
+                            <option value="Chinese">Chinese</option>
+                            <option value="French">French</option>
+                            <option value="American">American</option>
+                        </select>
+                    </div>
+                    <div class="holding">
+                        <label class="form-label" for="image">Image url</label>
+                        <input class="input-f" type="text" name="dish[image]" id="image">
+                    </div>
+                    <div class="holding">
+                        <label class="form-label" for="steps">Steps</label><br>
+                        <textarea type="text" name="dish[steps]" id="steps" rows="20" cols="50" required></textarea>
+                    </div>
+                    <button type="submit" class="see">Add dish</button>
+                </form>
+            </div>
+            <img src="/stylesheets/pencil2.png" id="chefimg2" alt="" height="450px">
+        </div>
+
+
+</body>
+
+</html>
